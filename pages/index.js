@@ -97,7 +97,7 @@ const Home = () => (
         </Box>
       </Section>
 
-      <Section delay={0.3}>
+      <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
           What do I like?
         </Heading>
