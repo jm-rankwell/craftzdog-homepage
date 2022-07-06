@@ -154,7 +154,7 @@ const Home = () => (
                 <PopoverHeader>Manga</PopoverHeader>
                 <PopoverCloseButton />
                 <PopoverBody>
-                  I just can\'t miss the next Dragon Ball scan each month!
+                  I just can&apos;t miss the next Dragon Ball scan each month!
                 </PopoverBody>
                 <PopoverFooter><Image src="/images/dragon-ball-super-bardock.webp" alt="Dragon Ball Super Bardock" width="290px" height="160px" /></PopoverFooter>
               </PopoverContent>
