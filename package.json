@@ -1,16 +1,16 @@
 {
   "name": "craftzdog-homepage",
   "version": "1.0.0",
-  "description": "Takuya's website",
+  "description": "Jonathan MONDAUT's website",
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
-    "start": "next start",
+    "start": "NODE_ENV=production node server.js",
     "prettier": "prettier --write .",
     "lint": "next lint"
   },
   "keywords": [],
-  "author": "Takuya Matsuyama",
+  "author": "Jonathan MONDAUT",
   "license": "MIT",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.7",

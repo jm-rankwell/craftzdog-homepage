@@ -6,20 +6,30 @@ import {
   Box,
   SimpleGrid,
   Button,
+  Icon,
   List,
   ListItem,
+  Popover,
+  PopoverTrigger,
+  PopoverArrow,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverCloseButton,
+  Portal,
   useColorModeValue,
   chakra
 } from '@chakra-ui/react'
 import { ChevronRightIcon } from '@chakra-ui/icons'
 import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
 import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
-import { IoLogoTwitter, IoLogoInstagram, IoLogoGithub } from 'react-icons/io5'
-import thumbYouTube from '../public/images/links/youtube.png'
-import thumbInkdrop from '../public/images/works/inkdrop_eyecatch.png'
+import { IoLogoLinkedin, IoLogoTwitter, IoMail } from 'react-icons/io5'
+import { GiBoxingGlove, GiEvilBook, GiGamepadCross } from "react-icons/gi";
+import thumbYouTube from '../public/images/links/rankwell_jonathan_mondaut_lead_developer.webp'
+import thumbMedium from '../public/images/links/medium-logo.webp'
 import Image from 'next/image'
 
 const ProfileImage = chakra(Image, {
@@ -42,10 +52,10 @@ const Home = () => (
 
       <Box display={{ md: 'flex' }}>
         <Box flexGrow={1}>
-          <Heading as="h2" variant="page-title">
+          <Heading as="h1" variant="page-title">
             Jonathan Mondaut
           </Heading>
-          <p>Passionated Developer</p>
+          <p>Passionated Lead Developer - Medium Writer</p>
         </Box>
         <Box
           flexShrink={0}
@@ -75,9 +85,25 @@ const Home = () => (
       </Box>
 
       <Section delay={0.1}>
-        <Heading as="h3" variant="section-title">
+        <Heading as="h2" variant="section-title">
           Work
         </Heading>
+        <SimpleGrid minChildWidth='230px' spacing='10px'>
+          <GridItem
+            height="150px"
+            href="https://www.youtube.com/watch?v=LidL7m-s0Sg"
+            title="Lead Developer (French video)"
+            thumbnail={thumbYouTube}
+          >
+          </GridItem>
+          <GridItem
+            height="150px"
+            href="https://medium.com/@jonathanmondaut"
+            title="Medium Profile"
+            thumbnail={thumbMedium}
+          >
+          </GridItem>
+        </SimpleGrid>
         <Paragraph>
           I am currently a CTO in a Digital Marketing Agency specialized in International Search Engine Optimization.
           Thanks to my daily work, I am well versed in Search Engine Marketing. In consequence, I design and make tools 
@@ -90,7 +116,7 @@ const Home = () => (
         </Paragraph>
         <Box align="center" my={4}>
           <NextLink href="https://www.linkedin.com/in/jmondaut/" target="_blank" passHref scroll={false}>
-            <Button colorScheme="teal">
+            <Button colorScheme="teal" leftIcon={<IoLogoLinkedin />}>
               LinkedIn Profile
             </Button>
           </NextLink>
@@ -98,89 +124,89 @@ const Home = () => (
       </Section>
 
       <Section delay={0.2}>
-        <Heading as="h3" variant="section-title">
+        <Heading as="h2" variant="section-title">
           What do I like?
         </Heading>
-        <Paragraph>
-          Art, Music,{' '}
-          <Link href="https://illust.odoruinu.net/" target="_blank">
-            Drawing
-          </Link>
-          , Playing Drums,{' '}
-          <Link href="https://500px.com/p/craftzdog" target="_blank">
-            Photography
-          </Link>
-          , Leica, Machine Learning
-        </Paragraph>
+        <SimpleGrid columns={{sm: 2, md: 3}} gap={6}>
+            <Popover>
+            <PopoverTrigger>
+              <Button size="lg"><Icon as={GiBoxingGlove} w={26} h={26} /></Button>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverHeader>Boxing</PopoverHeader>
+                <PopoverCloseButton />
+                <PopoverBody>
+                  I spar at least once a week and train twice at{" "}<Link href="https://www.temple-nobleart.com/" rel="nofollow" target="_blank">Temple Noble Art</Link>.
+                </PopoverBody>
+                <PopoverFooter><Image src="/images/temple-noble-art-porte-maillot.webp" alt="Club de boxe Temple Noble Art Porte Maillot" width="290px" height="160px" /></PopoverFooter>
+              </PopoverContent>
+            </Portal>
+          </Popover>
+          <Popover>
+            <PopoverTrigger>
+              <Button size="lg"><Icon as={GiEvilBook} w={26} h={26} /></Button>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverHeader>Manga</PopoverHeader>
+                <PopoverCloseButton />
+                <PopoverBody>
+                  I just can\'t miss the next Dragon Ball scan each month!
+                </PopoverBody>
+                <PopoverFooter><Image src="/images/dragon-ball-super-bardock.webp" alt="Dragon Ball Super Bardock" width="290px" height="160px" /></PopoverFooter>
+              </PopoverContent>
+            </Portal>
+          </Popover>
+          <Popover>
+            <PopoverTrigger>
+              <Button size="lg"><Icon as={GiGamepadCross} w={26} h={26} /></Button>
+            </PopoverTrigger>
+            <Portal>
+              <PopoverContent>
+                <PopoverArrow />
+                <PopoverHeader>Video Games</PopoverHeader>
+                <PopoverCloseButton />
+                <PopoverBody>
+                Not much time to play right now, but enjoying {" "}<Link href="https://www.nintendo.fr/Jeux/Nintendo-Switch/Xenoblade-Chronicles-Definitive-Edition-1633054.html" rel="nofollow" target="_blank">Xenoblade Chronicles</Link>.
+                </PopoverBody>
+                <PopoverFooter><Image src="/images/Xenoblade-Chronicles-Definitive-Edition-Monado.webp" alt="Xenoblade Chronicles Definitive Edition Monado Shulk" width="290px" height="160px" /></PopoverFooter>
+              </PopoverContent>
+            </Portal>
+          </Popover>
+        </SimpleGrid>
       </Section>
 
       <Section delay={0.3}>
-        <Heading as="h3" variant="section-title">
-          On the web
+        <Heading as="h2" variant="section-title">
+          My content and commucation channels
         </Heading>
         <List>
           <ListItem>
-            <Link href="https://github.com/craftzdog" target="_blank">
+            <Link href="mailto:mondautjonathan@gmail.com" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
-                leftIcon={<IoLogoGithub />}
+                leftIcon={<IoMail />} 
               >
-                @craftzdog
+                mondautjonathan@gmail.com
               </Button>
             </Link>
           </ListItem>
           <ListItem>
-            <Link href="https://twitter.com/inkdrop_app" target="_blank">
+            <Link href="https://twitter.com/JonathanMONDAUT" target="_blank">
               <Button
                 variant="ghost"
                 colorScheme="teal"
                 leftIcon={<IoLogoTwitter />}
               >
-                @inkdrop_app (English)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://twitter.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoTwitter />}
-              >
-                @craftzdog (日本語)
-              </Button>
-            </Link>
-          </ListItem>
-          <ListItem>
-            <Link href="https://instagram.com/craftzdog" target="_blank">
-              <Button
-                variant="ghost"
-                colorScheme="teal"
-                leftIcon={<IoLogoInstagram />}
-              >
-                @craftzdog
+                @JonathanMONDAUT
               </Button>
             </Link>
           </ListItem>
         </List>
-
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            href="https://www.youtube.com/devaslife"
-            title="Dev as Life"
-            thumbnail={thumbYouTube}
-          >
-            My YouTube channel (&gt;100k subs)
-          </GridItem>
-          <GridItem
-            href="https://www.inkdrop.app/"
-            title="Inkdrop"
-            thumbnail={thumbInkdrop}
-          >
-            A Markdown note-taking app
-          </GridItem>
-        </SimpleGrid>
 
         <Box align="center" my={4}>
           <NextLink href="/posts" passHref scroll={false}>

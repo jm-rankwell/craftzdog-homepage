@@ -3,14 +3,14 @@ import Layout from '../components/layouts/article'
 import Section from '../components/section'
 import { GridItem } from '../components/grid-item'
 
-import thumbPortfolio from '../public/images/contents/youtube-how-to-build-portfolio.jpg'
-import thumbHowToUseInkdrop from '../public/images/contents/youtube-how-to-use-inkdrop.jpg'
-import thumbFishWorkflow from '../public/images/contents/youtube-fish-workflow.jpg'
-import thumbMyDeskSetup from '../public/images/contents/youtube-my-desk-setup.jpg'
-import thumb500PaidUsers from '../public/images/contents/blog-500-paid-users.jpg'
-import thumbFinancialGoal from '../public/images/contents/blog-financial-goal.png'
-import thumbHowToPriceYourself from '../public/images/contents/blog-how-to-price-yourself.jpg'
-import thumb50xFaster from '../public/images/contents/youtube-50x-faster.jpg'
+import thumbToolSelect from "../public/images/contents/tool-selection-sky.webp"
+import thumbPandasScrap from '../public/images/contents/pandas-scrap.webp'
+import thumbScrapyPython from '../public/images/contents/scrapy-data-collection.webp'
+import thumbBeautifulSoup from '../public/images/contents/beautiful-soup-table-of-content.webp'
+import thumbSeleniumScrap from '../public/images/contents/selenium-scrap-heavy-js-website.webp'
+import thumbDropshippingReality from '../public/images/contents/dropshipping-ecommerce-reality.webp'
+// import thumbHowToPriceYourself from '../public/images/contents/blog-how-to-price-yourself.jpg'
+// import thumb50xFaster from '../public/images/contents/youtube-50x-faster.jpg'
 
 const Posts = () => (
   <Layout title="Posts">
@@ -22,24 +22,24 @@ const Posts = () => (
       <Section delay={0.1}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            title="How to build a portfolio website"
-            thumbnail={thumbPortfolio}
-            href="https://www.youtube.com/watch?v=bSMZgXzC9AA"
+            title="Which tool is the best to make a complete dataset?"
+            thumbnail={thumbToolSelect}
+            href="https://medium.com/@jonathanmondaut/which-tool-is-the-best-to-make-a-complete-dataset-b3ce35df56d2"
           />
           <GridItem
-            title="How to take notes in Markdown efficiently with Inkdrop"
-            thumbnail={thumbHowToUseInkdrop}
-            href="https://www.youtube.com/watch?v=-qBavwqc_mY"
+            title="Scrap data with Pandas in Python"
+            thumbnail={thumbPandasScrap}
+            href="https://medium.com/@jonathanmondaut/scrap-data-with-pandas-in-python-8227acb45222"
           />
           <GridItem
-            title="My Fish workflow"
-            thumbnail={thumbFishWorkflow}
-            href="https://www.youtube.com/watch?v=KKxhf50FIPI"
+            title="How to make awesome datasets fast with Scrapy in Python"
+            thumbnail={thumbScrapyPython}
+            href="https://medium.com/@jonathanmondaut/how-to-make-awesome-datasets-fast-with-scrapy-in-python-393bc860374e"
           />
           <GridItem
-            title="My desk setup (Late 2020)"
-            thumbnail={thumbMyDeskSetup}
-            href="https://www.youtube.com/watch?v=1OFDMwDlnOE"
+            title="Make use of Beautiful Soup 4 to build a HTML table of contents automatically"
+            thumbnail={thumbBeautifulSoup}
+            href="https://medium.com/@jonathanmondaut/make-use-of-beautiful-soup-4-to-build-a-html-table-of-contents-automatically-4f3694eddfca"
           />
         </SimpleGrid>
       </Section>
@@ -47,32 +47,18 @@ const Posts = () => (
       <Section delay={0.3}>
         <SimpleGrid columns={[1, 2, 2]} gap={6}>
           <GridItem
-            title="How I’ve Attracted The First 500 Paid Users For My SaaS That Costs $5/mo"
-            thumbnail={thumb500PaidUsers}
-            href="https://blog.inkdrop.app/how-ive-attracted-the-first-500-paid-users-for-my-saas-that-costs-5-mo-7a5b94b8e820"
+            title="Use Python with Selenium to scrap Javascript heavy websites"
+            thumbnail={thumbSeleniumScrap}
+            href="https://medium.com/@jonathanmondaut/use-python-with-selenium-to-scrap-javascript-heavy-websites-c05082214230"
           />
           <GridItem
-            title="I stopped setting a financial goal for my SaaS"
-            thumbnail={thumbFinancialGoal}
-            href="https://blog.inkdrop.app/i-stopped-setting-a-financial-goal-for-my-saas-a92c3db65506"
+            title="The reality behind building a dropshipping e-commerce"
+            thumbnail={thumbDropshippingReality}
+            href="https://medium.com/@jonathanmondaut/the-reality-behind-building-a-dropshipping-e-commerce-c625d64d868c"
           />
         </SimpleGrid>
       </Section>
 
-      <Section delay={0.5}>
-        <SimpleGrid columns={[1, 2, 2]} gap={6}>
-          <GridItem
-            title="How to Price Yourself as a Freelance Developer"
-            thumbnail={thumbHowToPriceYourself}
-            href="https://blog.inkdrop.app/how-to-price-yourself-as-a-freelance-developer-3453dfd59d91"
-          />
-          <GridItem
-            title="I made my React Native app 50x faster"
-            thumbnail={thumb50xFaster}
-            href="https://www.youtube.com/watch?v=vj723NlrIQc"
-          />
-        </SimpleGrid>
-      </Section>
     </Container>
   </Layout>
 )
